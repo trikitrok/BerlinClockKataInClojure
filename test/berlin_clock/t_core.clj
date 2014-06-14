@@ -48,4 +48,18 @@
                                                 "ROOO"
                                                 "ROOO"
                                                 "OOOOOOOOOOO"
+                                                "OOOO"])
+
+                    (show "22:00:00") => (join "\n"
+                                               ["Y"
+                                                "RRRR"
+                                                "RROO"
+                                                "OOOOOOOOOOO"
+                                                "OOOO"])
+
+                    (show "14:00:00") => (join "\n"
+                                               ["Y"
+                                                "RROO"
+                                                "RRRR"
+                                                "OOOOOOOOOOO"
                                                 "OOOO"]))))
