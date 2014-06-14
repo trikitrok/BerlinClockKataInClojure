@@ -24,11 +24,17 @@
                             (show-hours (quot h 5)))
 
      show-hours-second-row (fn [h]
-                             (show-hours (rem h 5)))]
+                             (show-hours (rem h 5)))
+
+     show-minutes-first-row (fn [m]
+                              (let [lamps-on (quot m 5)
+                                    lamps-off (- 11 lamps-on)]
+                                (apply str (concat (take lamps-on (cycle ["Y" "Y" "R"]))
+                                                   (turn-off lamps-off)))))]
 
     (join "\n"
           [(show-seconds s)
            (show-hours-first-row h)
            (show-hours-second-row h)
-           "OOOOOOOOOOO"
+           (show-minutes-first-row m)
            "OOOO"])))
