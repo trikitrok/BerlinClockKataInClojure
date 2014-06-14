@@ -6,7 +6,7 @@
   (let
     [[h m s] (map #(Integer. %) (split time #":"))
      seconds-lamp (fn [s]
-                    (if (= 0 (rem s 2))
+                    (if (zero? (rem s 2))
                       "Y" "R"))
 
      hours-first-row (fn [h]
