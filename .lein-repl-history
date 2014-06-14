@@ -29,3 +29,6 @@
 (repeat (- 4 (quot 11 5)) "O") 
 (concat (repeat (quot 11 5) "R")(repeat (- 4 (quot 11 5)) "O") )
 (apply str (concat (repeat (quot 11 5) "R")(repeat (- 4 (quot 11 5)) "O") ))
+(rem 11 5)
+(rem 12 5)
+(rem 21 5)

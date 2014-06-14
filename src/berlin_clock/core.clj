@@ -11,11 +11,14 @@
                       "Y" "R"))
 
      show-hours-first-row (fn [h]
-                       (apply str (concat (repeat (quot h 5) "R")(repeat (- 4 (quot h 5)) "O"))))]
+                       (apply str (concat (repeat (quot h 5) "R")(repeat (- 4 (quot h 5)) "O"))))
+
+     show-hours-second-row (fn [h]
+                       (apply str (concat (repeat (rem h 5) "R")(repeat (- 4 (rem h 5)) "O"))))]
 
     (join "\n"
           [(show-seconds s)
            (show-hours-first-row h)
-           "OOOO"
+           (show-hours-second-row h)
            "OOOOOOOOOOO"
            "OOOO"])))

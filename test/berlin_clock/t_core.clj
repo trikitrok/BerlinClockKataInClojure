@@ -22,7 +22,7 @@
                                                 "OOOOOOOOOOO"
                                                 "OOOO"])))
        (facts "hours lamps first row"
-              (fact "it contains 4 lamps that represent 5 hours each"
+              (fact "it contains 4 lamps that represent 5 hours each when red (R)"
                     (show "05:00:00") => (join "\n"
                                                ["Y"
                                                 "ROOO"
@@ -39,5 +39,13 @@
                                                ["Y"
                                                 "RRRO"
                                                 "OOOO"
+                                                "OOOOOOOOOOO"
+                                                "OOOO"])))
+       (facts "hours lamps second row"
+              (fact "it contains 4 lamps that represent 1 hour each when red (R)"
+                    (show "06:00:00") => (join "\n"
+                                               ["Y"
+                                                "ROOO"
+                                                "ROOO"
                                                 "OOOOOOOOOOO"
                                                 "OOOO"]))))
