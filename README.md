@@ -1,6 +1,6 @@
 # berlin-clock
 
-Berlin [Clock kata](http://agilekatas.co.uk/katas/berlinclock-kata.html) in Clojure.
+[Berlin Clock kata](http://agilekatas.co.uk/katas/berlinclock-kata.html) in Clojure.
 
 The project uses [Midje](https://github.com/marick/Midje/).
 
