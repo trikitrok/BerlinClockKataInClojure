@@ -12,6 +12,8 @@
 
      turn-off (fn [num-lamps] (repeat num-lamps "O"))
 
+     turn-on-YYR (fn [num-lamps-on] (take num-lamps-on (cycle ["Y" "Y" "R"])))
+
      show (comp (partial apply str) concat)
 
      show-lamps (fn [compute-num-lamps-on num-lamps turn-on]
@@ -25,8 +27,6 @@
      hours-first-row (show-lamps #(quot h 5) 4 turn-on-red)
 
      hours-second-row (show-lamps #(rem h 5) 4 turn-on-red)
-
-     turn-on-YYR (fn [num-lamps-on] (take num-lamps-on (cycle ["Y" "Y" "R"])))
 
      minutes-first-row (show-lamps #(quot m 5) 11 turn-on-YYR)
 
