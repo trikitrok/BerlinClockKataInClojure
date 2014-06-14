@@ -6,8 +6,6 @@
   (let
     [[h m s] (map #(Integer. %) (split time #":"))
 
-     seconds (if (zero? (rem s 2)) "Y" "R")
-
      turn-on-red (fn [num-lamps] (repeat num-lamps "R"))
 
      turn-on-yellow (fn [num-lamps] (repeat num-lamps "Y"))
@@ -21,6 +19,8 @@
                          num-lamps-off (- num-lamps num-lamps-on)]
                      (show (turn-on num-lamps-on)
                            (turn-off num-lamps-off))))
+
+     seconds (if (zero? (rem s 2)) "Y" "R")
 
      hours-first-row (show-lamps #(quot h 5) 4 turn-on-red)
 
