@@ -39,10 +39,10 @@
                                       (turn-off num-lamps-off))))
 
      show-minutes-second-row (fn [m]
-                               (let [lamps-on (rem m 5)
-                                     lamps-off (- 4 lamps-on)]
-                                 (show (turn-on-yellow lamps-on)
-                                       (turn-off lamps-off))))]
+                               (let [num-lamps-on (rem m 5)
+                                     num-lamps-off (- 4 num-lamps-on)]
+                                 (show (turn-on-yellow num-lamps-on)
+                                       (turn-off num-lamps-off))))]
 
     (join "\n"
           [(show-seconds s)
