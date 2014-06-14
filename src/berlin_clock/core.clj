@@ -16,8 +16,7 @@
 
      turn-off (fn [num-lamps] (repeat num-lamps "O"))
 
-     show (fn [lamps-on lamps-off]
-            (apply str (concat lamps-on lamps-off)))
+     show (comp (partial apply str) concat)
 
      show-hours (fn [num-lamps-on]
                   (let [num-lamps-off (- 4 num-lamps-on)]
