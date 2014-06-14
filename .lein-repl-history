@@ -40,3 +40,5 @@
 (take 4 (cycle ["R" "R" "Y"]))
 (take 5 (cycle ["R" "R" "Y"]))
 (take 11 (cycle ["R" "R" "Y"]))
+(load-file "./src/berlin_clock/core.clj")
+(berlin_clock.core/show "16:50:00")
