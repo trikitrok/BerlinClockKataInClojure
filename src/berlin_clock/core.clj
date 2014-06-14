@@ -4,14 +4,21 @@
 
 (defn show [time]
   (let
-    [[h m s] (map #(Integer. %) (split time #":"))
+    [
+     [h m s] (map #(Integer. %) (split time #":"))
 
      show-seconds (fn [s]
                     (if (zero? (rem s 2))
                       "Y" "R"))
 
+     turn-on (fn [lamps] (repeat lamps "R"))
+
+     turn-off (fn [lamps] (repeat lamps "O"))
+
      show-hours (fn [lamps-on]
-                  (apply str (concat (repeat lamps-on "R") (repeat (- 4 lamps-on) "O"))))
+                  (let [lamps-off (- 4 lamps-on)]
+                    (apply str (concat (turn-on lamps-on)
+                                       (turn-off lamps-off)))))
 
      show-hours-first-row (fn [h]
                             (show-hours (quot h 5)))
