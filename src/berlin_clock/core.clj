@@ -10,11 +10,14 @@
                     (if (zero? (rem s 2))
                       "Y" "R"))
 
+     show-hours (fn [lamps-on]
+                  (apply str (concat (repeat lamps-on "R") (repeat (- 4 lamps-on) "O"))))
+
      show-hours-first-row (fn [h]
-                       (apply str (concat (repeat (quot h 5) "R")(repeat (- 4 (quot h 5)) "O"))))
+                            (show-hours (quot h 5)))
 
      show-hours-second-row (fn [h]
-                       (apply str (concat (repeat (rem h 5) "R")(repeat (- 4 (rem h 5)) "O"))))]
+                             (show-hours (rem h 5)))]
 
     (join "\n"
           [(show-seconds s)
