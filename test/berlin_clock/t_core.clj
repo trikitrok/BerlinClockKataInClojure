@@ -78,4 +78,13 @@
                                                 "OOOO"
                                                 "OOOO"
                                                 "YYRYYRYYRYO"
-                                                "OOOO"]))))
+                                                "OOOO"])))
+
+       (facts "minutes lamps second row"
+              (fact "it contains 4 yellow lamps that represents 1 minute each"
+                    (show "00:16:00") => (join "\n"
+                                               ["Y"
+                                                "OOOO"
+                                                "OOOO"
+                                                "YYROOOOOOOO"
+                                                "YOOO"]))))
