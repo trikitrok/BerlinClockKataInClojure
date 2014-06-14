@@ -10,11 +10,9 @@
                     (if (zero? (rem s 2))
                       "Y" "R"))
 
-     turn-on (fn [num-lamps color] (repeat num-lamps color))
+     turn-on-red (fn [num-lamps] (repeat num-lamps "R"))
 
-     turn-on-red (fn [num-lamps] (turn-on num-lamps "R"))
-
-     turn-on-yellow (fn [num-lamps] (turn-on num-lamps "Y"))
+     turn-on-yellow (fn [num-lamps] (repeat num-lamps "Y"))
 
      turn-off (fn [num-lamps] (repeat num-lamps "O"))
 
