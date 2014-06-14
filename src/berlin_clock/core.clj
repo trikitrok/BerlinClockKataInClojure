@@ -7,10 +7,14 @@
     [[h m s] (map #(Integer. %) (split time #":"))
      seconds-lamp (fn [s]
                     (if (= 0 (rem s 2))
-                      "Y" "R"))]
+                      "Y" "R"))
+
+     hours-first-row (fn [h]
+                       (apply str (concat (repeat (quot h 5) "R")(repeat (- 4 (quot h 5)) "O"))))]
+
     (join "\n"
           [(seconds-lamp s)
-           "OOOO"
+           (hours-first-row h)
            "OOOO"
            "OOOOOOOOOOO"
            "OOOO"])))

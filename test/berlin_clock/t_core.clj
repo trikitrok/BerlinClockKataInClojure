@@ -20,4 +20,12 @@
                                                 "OOOO"
                                                 "OOOO"
                                                 "OOOOOOOOOOO"
+                                                "OOOO"])))
+       (facts "hours lamps first row"
+              (fact "it contains 4 lamps that represent 5 hours each"
+                    (show "05:00:00") => (join "\n"
+                                               ["Y"
+                                                "ROOO"
+                                                "OOOO"
+                                                "OOOOOOOOOOO"
                                                 "OOOO"]))))
