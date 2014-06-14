@@ -16,14 +16,15 @@
 
      show (comp (partial apply str) concat)
 
-     show-hours (fn [num-lamps-on]
-                  (let [num-lamps-off (- 4 num-lamps-on)]
-                    (show (turn-on-red num-lamps-on)
-                          (turn-off num-lamps-off))))
+     show-lamps (fn [compute-num-lamps-on num-lamps turn-on]
+                   (let [num-lamps-on (compute-num-lamps-on)
+                         num-lamps-off (- num-lamps num-lamps-on)]
+                     (show (turn-on num-lamps-on)
+                           (turn-off num-lamps-off))))
 
-     show-hours-first-row (fn [] (show-hours (quot h 5)))
+     hours-first-row (show-lamps #(quot h 5) 4 turn-on-red)
 
-     show-hours-second-row (fn [] (show-hours (rem h 5)))
+     hours-second-row (show-lamps #(rem h 5) 4 turn-on-red)
 
      show-minutes-first-row (fn []
                               (let [num-lamps-on (quot m 5)
@@ -39,7 +40,7 @@
 
     (join "\n"
           [(show-seconds)
-           (show-hours-first-row)
-           (show-hours-second-row)
+           hours-first-row
+           hours-second-row
            (show-minutes-first-row)
            (show-minutes-second-row)])))
