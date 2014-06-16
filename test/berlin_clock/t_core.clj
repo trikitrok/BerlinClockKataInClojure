@@ -14,9 +14,9 @@
                                                 "OOOOOOOOOOO"
                                                 "OOOO"]))
 
-              (fact "It turns on for the next second (R)"
+              (fact "It turns on for the next second (O)"
                     (show "00:00:01") => (join "\n"
-                                               ["R"
+                                               ["O"
                                                 "OOOO"
                                                 "OOOO"
                                                 "OOOOOOOOOOO"
