@@ -6,7 +6,7 @@
 
 (facts "about Berlin Clock"
        (facts "seconds lamp"
-              (fact "It turns off for one second (Y)"
+              (fact "It turns on for one second (Y)"
                     (show "00:00:00") => (join "\n"
                                                ["Y"
                                                 "OOOO"
@@ -14,7 +14,7 @@
                                                 "OOOOOOOOOOO"
                                                 "OOOO"]))
 
-              (fact "It turns on for the next second (O)"
+              (fact "It turns off for the next second (O)"
                     (show "00:00:01") => (join "\n"
                                                ["O"
                                                 "OOOO"
