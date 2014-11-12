@@ -24,7 +24,7 @@
   (let
     [[h m s] (map #(Integer. %) (split time #":"))
      
-     seconds-lamps-row (if (zero? (rem s 2)) "Y" "O")
+     seconds-lamps-row (if (even? s) "Y" "O")
      
      hours-lamps-first-row (show-lamps (quot h 5) 4 turn-on-red)
      
