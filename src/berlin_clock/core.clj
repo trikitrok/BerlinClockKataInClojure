@@ -24,19 +24,19 @@
   (let
     [[h m s] (map #(Integer. %) (split time #":"))
      
-     seconds (if (zero? (rem s 2)) "Y" "O")
+     seconds-lamps-row (if (zero? (rem s 2)) "Y" "O")
      
-     hours-first-row (show-lamps (quot h 5) 4 turn-on-red)
+     hours-lamps-first-row (show-lamps (quot h 5) 4 turn-on-red)
      
-     hours-second-row (show-lamps (rem h 5) 4 turn-on-red)
+     hours-lamps-second-row (show-lamps (rem h 5) 4 turn-on-red)
      
-     minutes-first-row (show-lamps (quot m 5) 11 turn-on-YYR)
+     minutes-lamps-first-row (show-lamps (quot m 5) 11 turn-on-YYR)
      
-     minutes-second-row (show-lamps (rem m 5) 4 turn-on-yellow)]
+     minutes-lamps-second-row (show-lamps (rem m 5) 4 turn-on-yellow)]
     
     (join "\n"
-          [seconds
-           hours-first-row
-           hours-second-row
-           minutes-first-row
-           minutes-second-row])))
+          [seconds-lamps-row
+           hours-lamps-first-row
+           hours-lamps-second-row
+           minutes-lamps-first-row
+           minutes-lamps-second-row])))
